@@ -18,3 +18,12 @@
 
     </div>
 </div>
+
+<!-- test template variables -->
+
+<div>
+    <input type="text" #phone placeholder="pls input">
+    <button (click)="call(phone.value)">click</button>
+
+    <div>你現在的號碼是 {{ phoneNumber }}</div>
+</div>

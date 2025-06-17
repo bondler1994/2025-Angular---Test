@@ -1,3 +1,4 @@
+import { Validators, FormControl } from '@angular/forms';
 import { Component } from '@angular/core';
 
 @Component({
@@ -12,12 +13,15 @@ export class Header {
   toggleAllBtn = false;
   check1 = false;
   check2 = false;
-  classX = '';
+  phoneNumber: string = '';
 
   btnToggleAll() {
     this.toggleAllBtn = !this.toggleAllBtn;
-    this.check1 = this.toggleAllBtn this.smallText;
-    this.check2 = this.toggleAllBtn this.smallText;
+    this.check1 = this.toggleAllBtn;
+    this.check2 = this.toggleAllBtn;
+  }
 
+  call(phoneNum: string) {
+    this.phoneNumber = phoneNum;
   }
 }
