@@ -1,10 +1,13 @@
 import { Validators, FormControl } from '@angular/forms';
 import { Component } from '@angular/core';
-// import { MatRippleModule } from '@angular/material/core';
+import { MatRippleModule } from '@angular/material/core';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-header',
-  imports: [],
+  imports: [MatRippleModule, MatIconModule, MatDividerModule, MatButtonModule],
   templateUrl: './header.html',
   styleUrl: './header.css',
 })
