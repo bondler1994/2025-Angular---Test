@@ -11,10 +11,10 @@
     <input id="checked" [checked]="toggleAllBtn" (click)="btnToggleAll()" type="checkbox">
     <input type="text" [placeholder]="placeholder">
     <div>
-        <input type="checkbox" [checked]="check1">
+        <input class="" type="checkbox" [checked]="check1">
         <label for="">111</label>
         <input type="checkbox" [checked]="check2">
-        <label for="">222</label>
+        <label class="text-3xl font-bold" for="">222</label>
 
     </div>
 </div>
@@ -23,7 +23,10 @@
 
 <div>
     <input type="text" #phone placeholder="pls input">
-    <button (click)="call(phone.value)">click</button>
+    <button class="border-1 pl-5 pr-5 py-0.5 rounded-md" (click)="call(phone.value)">Click</button>
 
-    <div>你現在的號碼是 {{ phoneNumber }}</div>
+    <div class="bg-blue-500 shadow-lg duration-200 ease-out hover:shadow-gray-500 text-white mt-5 p-5 rounded-xl">
+        你現在的號碼是：
+        {{ phoneNumber }}
+    </div>
 </div>
