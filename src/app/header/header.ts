@@ -1,5 +1,6 @@
 import { Validators, FormControl } from '@angular/forms';
 import { Component } from '@angular/core';
+// import { MatRippleModule } from '@angular/material/core';
 
 @Component({
   selector: 'app-header',
@@ -14,6 +15,8 @@ export class Header {
   check1 = false;
   check2 = false;
   phoneNumber: string = '';
+
+  rippleColor: string = 'rgba(255, 255, 255, 0.2)';
 
   btnToggleAll() {
     this.toggleAllBtn = !this.toggleAllBtn;
