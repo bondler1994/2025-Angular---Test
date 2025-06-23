@@ -35,6 +35,21 @@
     </div>
     <app-footer></app-footer>
 
+    <div *ngFor="let animal of animals; let i = index">
+        <div class="bg-amber-300 p-2 rounded-lg">
+            <div>
+                <div class="text-2xl">{{animal.name}}</div>
+            </div>
+            <div class="flex row gap-5 justify-between ali">
+                <div>
+                    <div>age : {{animal.age}}</div>
+                    <div>color : {{animal.color}}</div>
+                </div>
+                <button matButton="tonal" class="" (click)="delete"><i class="fa-solid fa-xmark-large"></i></button>
+            </div>
+        </div>
+    </div>
+
     <div>
         <button class="" matButton="filled">Basic</button>
     </div>

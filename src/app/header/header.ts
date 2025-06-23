@@ -49,14 +49,12 @@ export class Header {
     },
   ];
 
-  infoCols: string[] = [
-    '交易對象名稱',
-    '統編',
-    '交易對象編號',
-    '角色',
-    '交易對象類型',
-    '地區',
-    '地址',
+  animals = [
+    { name: 'Leo', age: 3, color: 'golden' },
+    { name: 'Milo', age: 2, color: 'gray' },
+    { name: 'Bella', age: 5, color: 'white' },
+    { name: 'Zara', age: 1, color: 'black' },
+    { name: 'Rocky', age: 4, color: 'brown' },
   ];
 
   placeholder = 'pls input me';
@@ -77,4 +75,6 @@ export class Header {
   call(phoneNum: string) {
     this.phoneNumber = phoneNum;
   }
+
+  delete() {}
 }
