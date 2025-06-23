@@ -33,6 +33,8 @@
         {{ phoneNumber }}
 
     </div>
+    <app-footer></app-footer>
+
     <div>
         <button class="" matButton="filled">Basic</button>
     </div>
@@ -40,4 +42,16 @@
         <mat-icon>home</mat-icon>
         Home
     </button>
+    <div>
+        <div *ngFor="let item of textApi">
+            {{ item.id }} - {{ item.title }}
+        </div>
+    </div>
+
+    <div>
+        @for( item of textApi; track item.id) {
+        <div>{{item.title}}</div>
+        }
+    </div>
+
 </div>
