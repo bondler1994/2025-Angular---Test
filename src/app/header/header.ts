@@ -6,6 +6,12 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 import { Footer } from '../footer/footer';
+import {
+  CdkDragDrop,
+  CdkDropList,
+  CdkDrag,
+  moveItemInArray,
+} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-header',
@@ -16,6 +22,8 @@ import { Footer } from '../footer/footer';
     MatButtonModule,
     CommonModule,
     Footer,
+    CdkDropList,
+    CdkDrag,
   ],
   templateUrl: './header.html',
   styleUrl: './header.css',
@@ -76,5 +84,11 @@ export class Header {
     this.phoneNumber = phoneNum;
   }
 
-  delete() {}
+  delete(index: number) {
+    this.animals.splice(index, 1);
+  }
+
+  dropBtn(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.animals, event.previousIndex, event.currentIndex);
+  }
 }
