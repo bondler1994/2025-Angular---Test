@@ -35,26 +35,29 @@
     </div>
     <app-footer></app-footer>
 
-    <div cdkDropList (cdkDropListDropped)="dropBtn($event)" class="cursor-move
- p-4 rounded-lg bg-amber-300 flex justify-between" *ngFor=" let animal of animals; let i=index">
-        <div cdkDrag>
-            <div>
-                <div>
-                    <div class="text-2xl ">{{animal.name}}</div>
-                </div>
-                <div class="flex row gap-5 justify-between b-0 ali">
-                    <div>
-                        <div>age : {{animal.age}}</div>
-                        <div>color : {{animal.color}}</div>
-                    </div>
-                </div>
-            </div>
-            <button matButton="tonal" class="" (click)="delete(i)">
-                <i class="fa-solid fa-xmark-large"></i>
-            </button>
-        </div>
-    </div>
 
+
+
+    <section class="flex flex-col gap-5">
+        <input #animalsInput (keyup.enter)="add(animalsInput.value);animalsInput.value='';"
+            class="border-2 rounded-lg p-2" type="text" [placeholder]="placeholder">
+        <ul class="flex flex-col gap-3 align-baseline">
+            <li class="shadow-sm hover:shadow-gray-500 duration-75 hover:border-b-2 hover:decoration-blue-500 active:border-0 ease-in bg-blue-400 p-5 rounded-2xl gap-3 flex items-center justify-between"
+                *ngFor="let animal of animals; let i = index">
+                <div class="flex justify-between text-xl ">
+                    {{ animal.name }}
+                </div>
+                <div class="flex ">
+                    {{ animal.age }} - {{animal.color}}
+                </div>
+                <div>
+                    <button (click)="removeBtn(i)" class="text-xl cursor-pointer">
+                        <i class="fa-solid fa-circle-xmark"></i>
+                    </button>
+                </div>
+            </li>
+        </ul>
+    </section>
 
     <div>
         <button class="" matButton="filled">Basic</button>
