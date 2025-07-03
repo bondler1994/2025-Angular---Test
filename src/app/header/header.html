@@ -1,81 +1,87 @@
 <p>header works!</p>
 <div>
-    <a href="">1</a>
-    <a href="">1</a>
-    <a href="">1</a>
-    <a href="">1</a>
-    <a href="">1</a>
+  <a href="">1</a>
+  <a href="">1</a>
+  <a href="">1</a>
+  <a href="">1</a>
+  <a href="">1</a>
 </div>
 <div>
-    <label for="checked">123</label>
-    <input id="checked" [checked]="toggleAllBtn" (click)="btnToggleAll()" type="checkbox">
-    <input type="text" [placeholder]="placeholder">
-    <div>
-        <input class="" type="checkbox" [checked]="check1">
-        <label for="">111</label>
-        <input type="checkbox" [checked]="check2">
-        <label class="text-3xl font-bold" for="">222</label>
-
-    </div>
+  <label for="checked">123</label>
+  <input
+    id="checked"
+    [checked]="toggleAllBtn"
+    (click)="btnToggleAll()"
+    type="checkbox"
+  />
+  <input type="text" [placeholder]="placeholder" />
+  <div>
+    <input class="" type="checkbox" [checked]="check1" />
+    <label for="">111</label>
+    <input type="checkbox" [checked]="check2" />
+    <label class="text-3xl font-bold" for="">222</label>
+  </div>
 </div>
 
 <!-- test template variables -->
 
 <div class="flex flex-col gap-5 mt-8">
-    <div class="flex gap-2">
-        <input class="border-1 rounded-md p-1" type="text" #phone placeholder="  pls input">
-        <button matButton="tonal" (click)="call(phone.value)">Click</button>
+  <div class="flex gap-2">
+    <input
+      class="border-1 rounded-md p-1"
+      type="text"
+      #phone
+      placeholder="  pls input"
+    />
+    <button matButton="tonal" (click)="call(phone.value)">Click</button>
+  </div>
+  <div
+    matRipple
+    [matRippleColor]="rippleColor"
+    class="bg-blue-500 shadow-lg duration-75 ease-out hover:shadow-gray-500 text-white p-5 rounded-xl"
+  >
+    你現在的號碼是： {{ phoneNumber }}
+  </div>
+  <app-footer></app-footer>
 
-    </div>
-    <div matRipple [matRippleColor]="rippleColor"
-        class="bg-blue-500 shadow-lg duration-75 ease-out hover:shadow-gray-500 text-white p-5 rounded-xl">
-        你現在的號碼是：
-        {{ phoneNumber }}
-
-    </div>
-    <app-footer></app-footer>
-
-
-
-
-    <section class="flex flex-col gap-5">
-        <input #animalsInput (keyup.enter)="add(animalsInput.value);animalsInput.value='';"
-            class="border-2 rounded-lg p-2" type="text" [placeholder]="placeholder">
-        <ul class="flex flex-col gap-3 align-baseline">
-            <li class="shadow-sm hover:shadow-gray-500 duration-75 hover:border-b-2 hover:decoration-blue-500 active:border-0 ease-in bg-blue-400 p-5 rounded-2xl gap-3 flex items-center justify-between"
-                *ngFor="let animal of animals; let i = index">
-                <div class="flex justify-between text-xl ">
-                    {{ animal.name }}
-                </div>
-                <div class="flex ">
-                    {{ animal.age }} - {{animal.color}}
-                </div>
-                <div>
-                    <button (click)="removeBtn(i)" class="text-xl cursor-pointer">
-                        <i class="fa-solid fa-circle-xmark"></i>
-                    </button>
-                </div>
-            </li>
-        </ul>
-    </section>
-
-    <div>
-        <button class="" matButton="filled">Basic</button>
-    </div>
-    <button matFab extended>
-        <mat-icon>home</mat-icon>
-        Home
-    </button>
-    <div>
-        <div *ngFor="let item of textApi">
-            {{ item.id }} - {{ item.title }}
+  <section class="flex flex-col gap-5">
+    <input
+      #animalsInput
+      (keyup.enter)="add(animalsInput.value);animalsInput.value='';"
+      class="border-2 rounded-lg p-2"
+      type="text"
+      [placeholder]="placeholder"
+    />
+    <ul class="flex flex-col gap-3 align-baseline">
+      <li
+        class="shadow-sm hover:shadow-gray-500 duration-75 hover:border-b-2 hover:decoration-blue-500 active:border-0 ease-in bg-blue-400 p-5 rounded-2xl gap-3 flex items-center justify-between"
+        *ngFor="let animal of animals; let i = index"
+      >
+        <div class="flex justify-between text-xl">{{ animal.name }}</div>
+        <div class="flex">{{ animal.age }} - {{animal.color}}</div>
+        <div>
+          <button (click)="removeBtn(i)" class="text-xl cursor-pointer">
+            <i class="fa-solid fa-circle-xmark"></i>
+          </button>
         </div>
-    </div>
+      </li>
+    </ul>
+  </section>
 
-    <div>
-        @for( item of textApi; track item.id) {
-        <div>{{item.title}}</div>
-        }
-    </div>
+  <div>
+    <button class="" matButton="filled">Basic</button>
+  </div>
+  <button matFab extended>
+    <mat-icon>home</mat-icon>
+    Home
+  </button>
+  <div>
+    <div *ngFor="let item of textApi">{{ item.id }} - {{ item.title }}</div>
+  </div>
 
+  <div>
+    @for( item of textApi; track item.id) {
+    <div>{{item.title}}</div>
+    }
+  </div>
 </div>

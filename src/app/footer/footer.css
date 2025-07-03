@@ -1,0 +1,14 @@
+.test-color {
+  color: greenyellow !important;
+  background-color: rgb(36, 140, 143);
+}
+
+.box.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.box.visible {
+  opacity: 1;
+  visibility: visible;
+}

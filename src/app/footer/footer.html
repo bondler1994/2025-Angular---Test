@@ -1,1 +1,42 @@
 <p>footer works!</p>
+<input type="text" [(ngModel)]="test" placeholder="123" />
+<div *ngIf="hideNgFor" class="flex gap-2 items-center">
+  <label for="man">this is a test</label>
+  <input
+    #inputValut
+    class="border-2 p-2 rounded-lg"
+    placeholder="test"
+    id="man"
+    type="text"
+    [(ngModel)]="testInput"
+  />
+</div>
+<!-- <p [class]="{greenYellow = red}">(DOM): {{ testInput }}</p> -->
+<div class="grid grid-rows gap-2">
+  <p class="text-4xl border-2 p-1 rounded-lg grid-rows-1" [style]="red">
+    123456
+  </p>
+  <!-- testHidden1-->
+  <div>
+    <span [class]="{'test-color': isHighlighted}" class="p-2 rounded-lg"
+      >這是隱藏但不保留 DOM</span
+    >
+    <button class="bg-amber-200 p-2" (click)="toggleHighlight()">
+      click me
+    </button>
+  </div>
+  <!-- testHidden2 -->
+  <div>
+    <div
+      [style.visibility]="isHiddenKeepDon ? 'visible':'hidden'"
+      [class.hidden]="!isHiddenKeepDon"
+      class="p-2 rounded-lg deration-1 ease-in-out"
+    >
+      這是隱藏但保留 DOM
+    </div>
+    <button class="bg-amber-200 p-2" (click)="toggleHiddenAndKeepTheDom()">
+      click me
+    </button>
+  </div>
+</div>
+<div>{{ footerText }} {{ test }}</div>
